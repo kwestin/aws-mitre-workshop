@@ -17,7 +17,7 @@ This guide will provide you with a step-by-step of all the commands that will be
 
 **Part 1 - Prepare Detection Writing**
 1. In the Panther Console - Navigate to Build > Detections > Create New
-2. Give it a unique name "Brandon's Failed Login IAM Detection" (Use your own name or initials)
+2. Give it a unique name "[YOUR NAME] Failed Login IAM Detection" 
 3. Set Severity to "Medium" and Log Types "AWS.CloudTrail"
 
 **Part 2 - Create Unit Test**
@@ -95,7 +95,7 @@ def rule(event):
 
 **Part 2 - Prepare Unit Test**
 
-1. Name the detection a unique name with your initials - Sample "AWS GuardDuty High Severity Finding - Brandon"
+1. Name the detection a unique name with your initials - Sample "AWS GuardDuty High Severity Finding - [YOUR NAME]"
 2. Select Functions & Tests
 3. Scroll down and populate test with log if not already done
 
@@ -144,12 +144,25 @@ def rule(event):
 
 
 
-
 **Part 3 - Tune Detection with Severity Function**
 1. Capture all guardduty detections as alerts in Panther, but tune out the lower end ones. 
 2. Modify the rule function to alert on events from severity 1 to 10
 3. To reduce noise of this detection, use the severity function to create dynamic categorization of alerts
 4. Use an IF statement to send severity 5 and below alerts to "INFO" level and 8 and above to "HIGH". For any other severity, return "MEDIUM"
+
+<details>
+	<summary>Click To View Answer </summary>
+	
+```
+def severity(event):
+    if float(event.get("severity",0)) <= 5.0:
+        return "INFO"
+    if float(event.get("severity",0)) >= 8.0:
+        return "HIGH"
+    else:
+        return "MEDIUM"
+```
+</details>
 
 ## Lesson 3 - Upload Detections with Panther_Analysis_Tool
 
