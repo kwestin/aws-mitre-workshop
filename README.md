@@ -59,6 +59,18 @@ This guide will provide you with a step-by-step of all the commands that will be
 	}
 }
 ```
+
+<details>
+	<summary>Click To View Answer </summary>
+	
+```
+from panther_base_helpers import deep_get
+
+def rule(event):
+    return event.get("eventName") == "ConsoleLogin" and deep_get(event,"responseElements","ConsoleLogin") == "Failure"
+```
+</details>
+
 **Part 3 - Writing your detection code**
 
 1. Import deep_get function from the panther_base_helpers library ```from panther_base_helpers import deep_get```
