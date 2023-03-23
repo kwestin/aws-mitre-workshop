@@ -164,5 +164,7 @@ def severity(event):
 ```
 </details>
 
-## Lesson 3 -
+## Lesson 3 - Adding MITRE ATT&CK Tags
 
+1. Panther Managed Detections as well as Crowdstrike are automatically tagged with tactics and techniques
+2. We will add tags for MITRE ATT&CK technique to the first detection that we wrote
