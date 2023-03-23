@@ -63,7 +63,7 @@ This guide will provide you with a step-by-step of all the commands that will be
 <details>
 	<summary>Click To View Answer </summary>
 	
-```
+``` python
 from panther_base_helpers import deep_get
 
 def rule(event):
