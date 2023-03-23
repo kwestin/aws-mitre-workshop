@@ -168,3 +168,5 @@ def severity(event):
 
 1. Panther Managed Detections as well as Crowdstrike are automatically tagged with tactics and techniques
 2. We will add tags for MITRE ATT&CK technique to the first detection that we wrote
+3. Navigate to BUILD -> MITRE ATT&CK 
+4. Find the "Brute Force" technique under "Credential Access" and add your detection to it
