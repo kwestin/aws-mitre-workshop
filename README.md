@@ -100,7 +100,7 @@ def rule(event):
 3. Scroll down and populate test with log if not already done
 
 **CloudTrail GuardDuty Log**
-``` json
+```json
 {
 "accountId": "123456789012",
 "arn": "arn:aws:guardduty:us-west-2:123456789012:detector/111111bbbbbbbbbb5555555551111111/finding/90b82273685661b9318f078d0851fe9a",
