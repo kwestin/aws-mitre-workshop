@@ -60,6 +60,15 @@ This guide will provide you with a step-by-step of all the commands that will be
 }
 ```
 
+
+**Part 3 - Writing your detection code**
+
+1. Import deep_get function from the panther_base_helpers library ```from panther_base_helpers import deep_get```
+2. All rules require a "rule" function that is a boolean to trigger an alert - True fires and alert 
+3. Create a rule function with ```def rule(event)```
+4. To write the rule, identify the event attributes that associate with a failed login. This should be "eventName" and "ConsoleLogin"
+5. Using event.get and deep_get to grab attributes from the event log, write a return statement that is TRUE when a console login attempt fails
+
 <details>
 	<summary>Click To View Answer </summary>
 	
@@ -70,16 +79,6 @@ def rule(event):
     return event.get("eventName") == "ConsoleLogin" and deep_get(event,"responseElements","ConsoleLogin") == "Failure"
 ```
 </details>
-
-**Part 3 - Writing your detection code**
-
-1. Import deep_get function from the panther_base_helpers library ```from panther_base_helpers import deep_get```
-2. All rules require a "rule" function that is a boolean to trigger an alert - True fires and alert 
-3. Create a rule function with ```def rule(event)```
-4. To write the rule, identify the event attributes that associate with a failed login. This should be "eventName" and "ConsoleLogin"
-5. Using event.get and deep_get to grab attributes from the event log, write a return statement that is TRUE when a console login attempt fails
-
-
 
 
 
