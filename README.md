@@ -1,4 +1,4 @@
-# Welcome to the Detection-as-Code (DAC) Workshop
+# Welcome to the Detection-as-Code (DAC) & MITRE ATT&CK Workshop
 This guide will provide you with a step-by-step of all the commands that will be needed during the hands-on portion of the workshop. If you have questions, feel free to ask your group moderator.
 
 **Helpful Links**
@@ -26,7 +26,7 @@ This guide will provide you with a step-by-step of all the commands that will be
 3. Delete the brackets populated. Copy and paste the sample event below into your console
 
 **CloudTrail IAM Sample Log**
-```
+``` json
 {
 	"additionalEventData": {
 		"LoginTo": "https://console.aws.amazon.com/console/",
